@@ -1,11 +1,9 @@
-import { Router } from 'express'
-import type { Request, Response } from 'express'
+import { type Request, type Response, Router } from 'express'
+import { adapt } from '../abstract'
 import StatusCheckController from '../controller/statusCheck'
-import { adapt } from './adapter/express-adapter'
 
 const router = Router()
 
 router.get('/', adapt(StatusCheckController))
-router.post('/', (req: Request, res: Response) => {})
 
 export default router
